@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:BizUApp.ViewModels"
+             Title="Cadastro de Usuário"
+             x:Class="BizUApp.Views.CadastroUserView">
+
+    <ContentPage.BindingContext>
+        <pages:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Image Source="bizu_logo.png"
+                   HeightRequest="100"/>
+
+            <Label Text="Usuário"
+                   TextColor="#201F49"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+
+            <Entry Placeholder="Informe Seu Usuário"
+                   Text="{Binding Nome}"/>
+
+            <Label Text="Senha"
+                   Margin="0,30,0,0"
+                   TextColor="#201F49"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+
+            <Entry Placeholder="Informe Seu Usuário"
+                   Text="{Binding Senha}"/>
+
+            <Button Text="Registrar"
+                    Margin="0,100,0,0"
+                    TextColor="White"
+                    Command="{Binding RegisterCommand}"
+                    BackgroundColor="#201F49"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
