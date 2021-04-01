@@ -7,8 +7,14 @@
         <StackLayout>
             <Image Source="bizu_logo.png"
                    HeightRequest="100"/>
-            
-            
+
+            <Label x:Name="txtNomeBolsa"
+                   TextColor="Black"
+                   FontSize="30"/>
+
+            <Label x:Name="txtPontosBolsa"
+                   TextColor="Red"
+                   FontSize="20"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
