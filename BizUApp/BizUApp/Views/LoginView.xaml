@@ -1,179 +1,191 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:pages="clr-namespace:BizUApp.ViewModels"
-             Title="Login"
-             x:Class="BizUApp.Views.LoginView">
+<ContentPage
+    x:Class="BizUApp.Views.LoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:BizUApp.ViewModels"
+    Title="Login">
 
     <ContentPage.BindingContext>
-        <pages:LoginViewModel/>
+        <pages:LoginViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Content>
         <Grid BackgroundColor="Gainsboro">
-            <Image Source="imagemfundologin.jpg"     
-                   Opacity="0.3"
-                   Aspect="Fill"/>
+            <Image
+                Aspect="Fill"
+                Opacity="0.3"
+                Source="imagemfundologin.jpg" />
 
             <StackLayout Margin="0,20,0,0" Padding="10">
-                <Image Source="bizu_logo.png" HeightRequest="100"/>  
-                
-                <Label Text="Usuário"
-                       FontSize="Large"
-                       FontAttributes="Bold"
-                       TextColor="#201F49"/>
+                <Image HeightRequest="100" Source="bizu_logo.png" />
 
-                <Entry Placeholder="Informe Usuário"
-                       Text="{Binding Nome}"/>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="Usuário"
+                    TextColor="#201F49" />
 
-                <Label Text="Senha"
-                       Margin="0,30,0,0"
-                       FontSize="Large"
-                       FontAttributes="Bold"
-                       TextColor="#201F49"/>
+                <Entry Placeholder="Informe Usuário" Text="{Binding Nome}" />
 
-                <Entry Placeholder="Informe Senha"
-                       IsPassword="True"
-                       Text="{Binding Senha}"/>
+                <Label
+                    Margin="0,30,0,0"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="Senha"
+                    TextColor="#201F49" />
 
-                <Button Text="Login"
-                        Command="{Binding LoginCommand}"
-                        Background="#201F49"
-                        TextColor="White"/>
+                <Entry
+                    IsPassword="True"
+                    Placeholder="Informe Senha"
+                    Text="{Binding Senha}" />
+
+                <Button
+                    Background="#201F49"
+                    Command="{Binding LoginCommand}"
+                    Text="Login"
+                    TextColor="White" />
 
                 <StackLayout>
-                    <Label Text="Não tem uma conta? Registre-se"
-                           FontSize="18"
-                           Margin="0,15,0,0"
-                           HorizontalTextAlignment="Start"
-                           TextColor="#201F49"/>
-                    
-                    <Button Text="Registrar"
-                            TextColor="White"
-                            Clicked="abreCadastraUserPage"
-                            BackgroundColor="Black"/>
+                    <Label
+                        Margin="0,15,0,0"
+                        FontSize="18"
+                        HorizontalTextAlignment="Start"
+                        Text="Não tem uma conta? Registre-se"
+                        TextColor="#201F49" />
+
+                    <Button
+                        BackgroundColor="Black"
+                        Clicked="abreCadastraUserPage"
+                        Text="Registrar"
+                        TextColor="White" />
                 </StackLayout>
 
                 <StackLayout>
-                    <Label Text="Conheça Nossas Plataformas Digitais."
-                           TextColor="#201F49"
-                           FontAttributes="Bold"
-                           Margin="0,20,0,0"
-                           FontSize="20"/>
-                    
-                    <StackLayout Orientation="Horizontal">                       
+                    <Label
+                        Margin="0,20,0,0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text="Conheça Nossas Plataformas Digitais."
+                        TextColor="#201F49" />
 
-                        <!--Telegram-->
-                        <ImageButton Source="telegram.png"                                     
-                                     Aspect="Fill"                                     
-                                     BackgroundColor="Transparent">
+                    <StackLayout Orientation="Horizontal">
+
+                        <!--  Telegram  -->
+                        <ImageButton
+                            Aspect="Fill"
+                            BackgroundColor="Transparent"
+                            Source="telegram.png">
                             <ImageButton.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="70"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="70" />
                                 </OnPlatform>
                             </ImageButton.HeightRequest>
 
                             <ImageButton.WidthRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="50"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="50" />
                                 </OnPlatform>
                             </ImageButton.WidthRequest>
 
                             <ImageButton.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="Android" Value="0,50,30,0"/>
-                                    <On Platform="UWP" Value="0,50,0,0"/>
+                                    <On Platform="Android" Value="0,50,30,0" />
+                                    <On Platform="UWP" Value="0,50,0,0" />
                                 </OnPlatform>
                             </ImageButton.Margin>
                         </ImageButton>
 
-                        <!--WhatsApp-->
-                        <ImageButton Source="whatsapp.png"                                     
-                                     Aspect="Fill"                                     
-                                     BackgroundColor="Transparent">
+                        <!--  WhatsApp  -->
+                        <ImageButton
+                            Aspect="Fill"
+                            BackgroundColor="Transparent"
+                            Source="whatsapp.png">
                             <ImageButton.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="70"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="70" />
                                 </OnPlatform>
                             </ImageButton.HeightRequest>
 
                             <ImageButton.WidthRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="50"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="50" />
                                 </OnPlatform>
                             </ImageButton.WidthRequest>
 
                             <ImageButton.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="Android" Value="20,50,30,0"/>
-                                    <On Platform="UWP" Value="190,50,0,0"/>
+                                    <On Platform="Android" Value="20,50,30,0" />
+                                    <On Platform="UWP" Value="190,50,0,0" />
                                 </OnPlatform>
                             </ImageButton.Margin>
                         </ImageButton>
 
-                        <!--Internet-->
-                        <ImageButton Source="internet.png"                                     
-                                     Aspect="Fill"
-                                     Clicked="abrePaginaWeb"
-                                     BackgroundColor="Transparent">
+                        <!--  Internet  -->
+                        <ImageButton
+                            Aspect="Fill"
+                            BackgroundColor="Transparent"
+                            Clicked="abrePaginaWeb"
+                            Source="internet.png">
                             <ImageButton.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="70"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="70" />
                                 </OnPlatform>
                             </ImageButton.HeightRequest>
 
                             <ImageButton.WidthRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="50"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="50" />
                                 </OnPlatform>
                             </ImageButton.WidthRequest>
 
                             <ImageButton.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="Android" Value="20,50,30,0"/>
-                                    <On Platform="UWP" Value="190,50,0,0"/>
+                                    <On Platform="Android" Value="20,50,30,0" />
+                                    <On Platform="UWP" Value="190,50,0,0" />
                                 </OnPlatform>
                             </ImageButton.Margin>
                         </ImageButton>
 
-                        <!--Youtube-->
-                        <ImageButton Source="youtube.png"                                     
-                                     Aspect="Fill"
-                                     Clicked="abrePaginaYoutube"
-                                     BackgroundColor="Transparent">
+                        <!--  Youtube  -->
+                        <ImageButton
+                            Aspect="Fill"
+                            BackgroundColor="Transparent"
+                            Clicked="abrePaginaYoutube"
+                            Source="youtube.png">
                             <ImageButton.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="70"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="70" />
                                 </OnPlatform>
                             </ImageButton.HeightRequest>
 
                             <ImageButton.WidthRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="UWP" Value="100"/>
-                                    <On Platform="Android" Value="50"/>
+                                    <On Platform="UWP" Value="100" />
+                                    <On Platform="Android" Value="50" />
                                 </OnPlatform>
                             </ImageButton.WidthRequest>
 
                             <ImageButton.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="Android" Value="20,50,30,0"/>
-                                    <On Platform="UWP" Value="190,50,0,0"/>
+                                    <On Platform="Android" Value="20,50,30,0" />
+                                    <On Platform="UWP" Value="190,50,0,0" />
                                 </OnPlatform>
                             </ImageButton.Margin>
                         </ImageButton>
                     </StackLayout>
                 </StackLayout>
-                
+
             </StackLayout>
-            
-            
+
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

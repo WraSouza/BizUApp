@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+    x:Class="BizUApp.Menu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:BizUApp.Views">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menú">
+            <StackLayout Padding="10" BackgroundColor="White">
+                <Button
+                    BackgroundColor="White"
+                    Clicked="abreInicialView"
+                    ImageSource="home.png"
+                    Text="Início" />
+                <Button
+                    BackgroundColor="White"
+                    Clicked="abreCotacaoView"
+                    ImageSource="money.png"
+                    Text="Cotação" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <views:BizuInicialView />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+
+
+
+</FlyoutPage>

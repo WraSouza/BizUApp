@@ -1,20 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Seja Bem-Vindo(a)"
-             x:Class="BizUApp.Views.BizuInicialView">
+<ContentPage
+    x:Class="BizUApp.Views.BizuInicialView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    xmlns:pages="clr-namespace:BizUApp.Views"
+    Title="Seja Bem-Vindo(a)">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="bizu_logo.png"
-                   HeightRequest="100"/>
+        <StackLayout Padding="10">
+            <Image HeightRequest="100" Source="bizu_logo.png" />
 
-            <Label x:Name="txtNomeBolsa"
-                   TextColor="Black"
-                   FontSize="30"/>
+            <Frame BorderColor="Gainsboro" HeightRequest="300">
+                <StackLayout>
+                    <Label
+                        x:Name="txtNomeBolsa"
+                        FontSize="25"
+                        TextColor="Black" />
 
-            <Label x:Name="txtPontosBolsa"
-                   TextColor="Red"
-                   FontSize="20"/>
+                    <Label
+                        x:Name="txtPontosBolsa"
+                        FontSize="25"
+                        TextColor="Red" />
+
+                    <charts:ChartView x:Name="grafico1" HeightRequest="180" />
+                </StackLayout>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

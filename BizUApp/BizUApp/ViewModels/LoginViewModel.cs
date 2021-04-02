@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -125,8 +126,9 @@ namespace BizUApp.ViewModels
                 if (Result)
                 {
                     Preferences.Set("Nome", Nome);
-                   
-                    await Application.Current.MainPage.Navigation.PushAsync(new Views.BizuInicialView());
+
+                    Application.Current.MainPage = new Menu();
+                    //await Application.Current.MainPage.Navigation.PushAsync(new Views.BizuInicialView());
                 }
                 else
                 {
